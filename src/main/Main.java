@@ -1,8 +1,6 @@
 package main;
 
 import javax.swing.JFrame;
-import java.awt.Graphics;
-import java.awt.event.*;
 import javax.sound.sampled.*;
 
 public class Main 
@@ -10,15 +8,17 @@ public class Main
     public static void main(String[] args) 
     {
         JFrame window = new JFrame();
-        Panel panel = new Panel();
+        GamePanel gamePanel = new GamePanel();
 
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(true);
+        window.setResizable(false);
         window.setTitle("My Game");
-        window.add(panel);
+        window.add(gamePanel);
         window.pack();
-
+        
         window.setLocationRelativeTo(null);
         window.setVisible(true);
+
+        gamePanel.startGame();
     }
 }
